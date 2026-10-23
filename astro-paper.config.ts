@@ -1,7 +1,7 @@
 import { defineAstroPaperConfig } from "./src/types/config";
 export default defineAstroPaperConfig({
   site: {
-    url: "https://xxx.vercel.app/",
+    url: "https://my-blog-p6go.vercel.app/",
     title: "我的随笔小站",
     description: "记录在奥克兰的徒步、海边、日常碎片与随想。",
     author: "你",
