@@ -1,0 +1,32 @@
+/* Register design tokens for Tailwind v4 */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-app: var(--font-google-sans-code);
+}
+/* Light theme values — 日系纸张浅色 */
+:root,
+[data-theme="light"] {
+  --background: #f6f2eb;
+  --foreground: #38342e;
+  --accent: #728770;
+  --accent-foreground: #ffffff;
+  --muted: #e9e2d8;
+  --muted-foreground: #777065;
+  --border: #d8d0c4;
+}
+/* Dark theme values — 配套深色纸质感 */
+[data-theme="dark"] {
+  --background: #2c2c2a;
+  --foreground: #e4e0d8;
+  --accent: #a9b8a7;
+  --accent-foreground: #2c2c2a;
+  --muted: #3b3a36;
+  --muted-foreground: #b8b3aa;
+  --border: #484641;
+}
