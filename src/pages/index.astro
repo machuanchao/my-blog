@@ -13,7 +13,12 @@ const { posts: postsConfig } = config;
 const locale = Astro.currentLocale ?? config.site.lang;
 const posts = await getCollection("posts");
 const sortedPosts = getSortedPosts(posts);
-const recentPosts = sortedPosts;
+// 统一倒序分配序号，和 /posts 页面规则完全一样
+const postsWithSerial = sortedPosts.map((post, index, arr) => ({
+  ...post,
+  serial: arr.length - index
+}));
+const recentPosts = postsWithSerial;
 const homePath = getRelativeLocaleUrl(locale, "");
 ---
 <Layout>

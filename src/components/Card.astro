@@ -3,16 +3,13 @@ import type { CollectionEntry } from "astro:content";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { toTransitionName } from "@/utils/toTransitionName";
 import Datetime from "./Datetime.astro";
-
 type Props = {
   variant?: "h2" | "h3";
+  serial?: number;
 } & CollectionEntry<"posts">;
-
-const { variant: Heading = "h2", id, data, filePath } = Astro.props;
-
+const { variant: Heading = "h2", id, data, filePath, serial } = Astro.props;
 const { title, description, ...props } = data;
 ---
-
 <li class="my-1">
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
@@ -23,6 +20,7 @@ const { title, description, ...props } = data;
     ]}
   >
     <Heading transition:name={toTransitionName(id)}>
+      {serial && <span class="mr-2 opacity-60 border border-current px-1.5 rounded text-sm">{serial}</span>}
       {title}
     </Heading>
   </a>
