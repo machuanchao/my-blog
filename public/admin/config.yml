@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: machuanchao/my-blog
+  branch: main
+  auth_endpoint: https://decap-cms-auth.netlify.app/.netlify/functions/auth
+
+media_folder: ""
+public_folder: ""
+
+collections:
+  - name: blog
+    label: 博文
+    folder: "src/content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    path: "{{slug}}/index.md"
+    media_folder: "{{slug}}"
+    public_folder: ""
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布时间(UTC)", name: "pubDatetime", widget: "datetime", format: "yyyy-MM-dd'T'HH:mm:ssZ"}
+      - {label: "摘要", name: "description", widget: "text", required: false}
+      - {label: "是否草稿", name: "draft", widget: "boolean", default: false}
+      - {label: "正文", name: "body", widget: "markdown"}
