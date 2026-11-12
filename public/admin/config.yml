@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: machuanchao/my-blog
-  branch: main
+  branch: master
   auth_endpoint: https://decap-cms-auth.netlify.app/.netlify/functions/auth
 
 media_folder: ""
